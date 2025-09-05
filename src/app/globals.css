@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark-base: oklch(13% 0.028 261.692);
+  --color-light-base: oklch(98.5% 0.002 247.839);
+  --color-sipil-base: oklch(0.3 0.15 250);
+  --color-sipil-secondary: oklch(0.55 0.05 245);
+  --color-sipil-brown: oklch(0.5 0.12 60);
+  --color-sipil-blue-accent: oklch(0.75 0.1 235);
+  --color-sipil-gray-netral: oklch(0.7 0.02 250);
+  --color-sipil-orange-accent: oklch(0.7 0.15 60);
+  --color-blue-base: oklch(54.6% 0.245 262.881);
+  --color-blue-secondary: oklch(70.7% 0.165 254.624);
+  --color-blue-tertiary: oklch(88.2% 0.059 254.128);
+  --color-blue-quaternary: oklch(93.2% 0.032 255.585);
+  --color-yellow-base: oklch(68.1% 0.162 75.834);
+  --color-yellow-secondary: oklch(85.2% 0.199 91.936);
+  --color-yellow-tertiary: oklch(94.5% 0.129 101.54);
+  --color-red-base: oklch(57.7% 0.245 27.325);
+  --color-red-secondary: oklch(70.4% 0.191 22.216);
+  --color-red-tertiary: oklch(88.5% 0.062 18.334);
+  --color-green-base: oklch(62.7% 0.194 149.214);
+  --color-green-secondary: oklch(79.2% 0.209 151.711);
+  --color-green-tertiary: oklch(92.5% 0.084 155.995);
+  --color-cyan-base: oklch(60.9% 0.126 221.723);
+  --color-cyan-secondary: oklch(78.9% 0.154 211.53);
+  --color-cyan-tertiary: oklch(91.7% 0.08 205.041);
+  --color-purple-base: oklch(55.8% 0.288 302.321);
+  --color-purple-secondary: oklch(71.4% 0.203 305.504);
+  --color-purple-tertiary: oklch(90.2% 0.063 306.703);
+  --color-orange-base: oklch(64.6% 0.222 41.116);
+  --color-orange-secondary: oklch(75% 0.183 55.934);
+  --color-orange-tertiary: oklch(90.1% 0.076 70.697);
+  --color-pink-base: oklch(59.2% 0.249 0.584);
+  --color-pink-secondary: oklch(71.8% 0.202 349.761);
+  --color-pink-tertiary: oklch(89.9% 0.061 343.231);
+  --color-teal-base: oklch(60% 0.118 184.704);
+  --color-teal-secondary: oklch(77.7% 0.152 181.912);
+  --color-teal-tertiary: oklch(91% 0.096 180.426);
+  --color-violet-base: oklch(54.1% 0.281 293.009);
+  --color-violet-secondary: oklch(70.2% 0.183 293.541);
+  --color-violet-tertiary: oklch(89.4% 0.057 293.283);
+  --color-gray-base: oklch(37.3% 0.034 259.733);
+  --color-gray-secondary: oklch(44.6% 0.03 256.802);
+  --color-gray-tertiary: oklch(92.8% 0.006 264.531);
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+
+  h4 {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+
+  h5 {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+
+  h6 {
+    @apply text-xs md:text-sm lg:text-base;
+  }
+
+  p {
+    @apply text-base md:text-lg;
+  }
+
+  small {
+    @apply text-sm md:text-base;
+  }
+}
+
+@layer components {
+  .section-padding-x {
+    @apply px-6 sm:px-8 md:px-12 xl:px-20;
+  }
+
+  .footer-social-media-link {
+    @apply text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 w-6 h-6 transition-all duration-300;
+  }
+
+  .footer-link {
+    @apply text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-all duration-300 cursor-pointer;
+  }
+
+  .big-font-size {
+    @apply text-base md:text-lg;
+  }
+
+  .small-font-size {
+    @apply text-sm md:text-base;
+  }
+
+  .extra-small-font-size {
+    @apply text-xs md:text-sm;
+  }
+
+  /* Hides scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hides scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
