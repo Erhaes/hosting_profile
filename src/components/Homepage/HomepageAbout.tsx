@@ -1,4 +1,56 @@
+"use client";
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import apiClient from "@/services/apiClient";
+import { Laboratory } from "@/types";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 export default function HomepageAbout() {
+  const [laboratoryData, setLaboratoryData] = useState<Laboratory[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const getImageUrl = (imagePath: string) => {
+    if (!imagePath) {
+      return "/images/backgrounds/lobby.jpeg"; // Default fallback image
+    }
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+  };
+
+  // Parse images string to array
+  const parseImages = (imagesString: string): string[] => {
+    try {
+      return JSON.parse(imagesString);
+    } catch {
+      return [imagesString]; // If not JSON, treat as single image
+    }
+  };
+
+  // Fetch laboratory data
+  useEffect(() => {
+    const fetchLaboratories = async () => {
+      try {
+        setLoading(true);
+        const response = await apiClient.get("/carousel/laboratories");
+        const data = response.data.data || response.data;
+        setLaboratoryData(data);
+        setError(null);
+      } catch (err) {
+        console.error("Failed to fetch laboratory data:", err);
+        setError("Gagal memuat data laboratorium.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLaboratories();
+  }, []);
+
   return (
     <section
       id="about"
@@ -30,17 +82,65 @@ export default function HomepageAbout() {
 
         {/* About Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left Column - Image */}
+          {/* Left Column - Image Carousel */}
           <div className="relative rounded-lg overflow-hidden h-full">
-            <img
-              // src="/images/backgrounds/ufuk-unsoed.webp"
-              src="/images/backgrounds/lobby.jpeg"
-              alt="Gedung Teknik Unsoed"
-              className="rounded-lg shadow-lg w-full h-full object-cover"
-            />
-            <div className="absolute top-4 left-4 bg-sipil-base text-light-base py-1 px-3 rounded-md shadow-md small-font-size font-medium">
-              Didirikan Tahun 2000
-            </div>
+            {loading ? (
+              <div className="rounded-lg shadow-lg w-full h-64 bg-gray-200 animate-pulse flex items-center justify-center">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sipil-base mx-auto mb-4"></div>
+                  <p>Memuat laboratorium...</p>
+                </div>
+              </div>
+            ) : error ? (
+              <div className="rounded-lg shadow-lg w-full h-64 bg-gray-200 flex items-center justify-center">
+                <div className="text-center text-red-600">
+                  <p>{error}</p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="mt-4 px-4 py-2 bg-sipil-base text-white rounded-md hover:bg-sipil-secondary"
+                  >
+                    Coba Lagi
+                  </button>
+                </div>
+              </div>
+            ) : laboratoryData.length > 0 ? (
+              <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="rounded-lg shadow-lg"
+              >
+                {laboratoryData.map((lab) => {
+                  const images = parseImages(lab.images);
+                  return images.map((image, index) => (
+                    <SwiperSlide key={`${lab.id}-${index}`}>
+                      <div className="relative aspect-video">
+                        <img
+                          src={getImageUrl(image)}
+                          alt={lab.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-4 left-4 bg-sipil-base text-light-base py-1 px-3 rounded-md shadow-md small-font-size font-medium">
+                          {lab.name}
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ));
+                })}
+              </Swiper>
+            ) : (
+              <div className="rounded-lg shadow-lg w-full h-64 bg-gray-200 flex items-center justify-center">
+                <p className="text-gray-500">Tidak ada data laboratorium</p>
+              </div>
+            )}
           </div>
 
           {/* Right Column - Text Content */}

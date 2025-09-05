@@ -217,3 +217,11 @@ export interface Review {
   updated_at: string;
   deleted_at: string | null;
 }
+
+export interface Laboratory {
+  id: number;
+  name: string;
+  images: string;
+  created_at: string;
+  updated_at: string;
+}
