@@ -182,7 +182,8 @@ export default function TestDetail() {
                       <img
                         src={getImageUrl(imagePath)}
                         alt={`${test.name} - gambar ${index + 1}`}
-                        className="object-cover"
+                        className="w-full h-full object-cover"
+                        // className="object-cover"
                       />
                     </div>
                   ))}
@@ -290,7 +291,7 @@ export default function TestDetail() {
                   </svg>
                   <div>
                     <p className="text-sm text-blue-300">Minimum Pengujian</p>
-                    <p className="font-medium">{test.minimum_unit} Unit</p>
+                    <p className="font-medium">{test.minimum_unit} {test.category.name}</p>
                   </div>
                 </div>
 
