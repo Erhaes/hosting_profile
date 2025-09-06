@@ -19,7 +19,7 @@ export default function HomepageAbout() {
     if (!imagePath) {
       return "/images/backgrounds/lobby.jpeg"; // Default fallback image
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+    return `${process.env.NEXT_PUBLIC_STORAGE_URL || "https://reservasi.labsipilunsoed.com/"}/storage/${imagePath}`;
   };
 
   // Parse images string to array

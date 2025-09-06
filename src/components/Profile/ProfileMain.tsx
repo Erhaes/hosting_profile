@@ -96,7 +96,7 @@ export default function ProfileMain() {
     if (!imagePath) {
       return "/images/accreditations/iso-certification.jpg"; // Default fallback image
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+    return `${process.env.NEXT_PUBLIC_STORAGE_URL || "https://reservasi.labsipilunsoed.com/"}/storage/${imagePath}`;
   };
 
   // Helper function untuk mendapatkan URL file standar
@@ -104,7 +104,7 @@ export default function ProfileMain() {
     if (!filePath) {
       return "#"; // Return # if no file available
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${filePath}`;
+    return `${process.env.NEXT_PUBLIC_STORAGE_URL || "https://reservasi.labsipilunsoed.com/"}/storage/${filePath}`;
   };
 
   // Fetch data pejabat struktural
@@ -238,7 +238,7 @@ export default function ProfileMain() {
       // Return path ke gambar placeholder jika tidak ada foto
       return "/images/staff/placeholder-profile.jpg"; 
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+    return `${process.env.NEXT_PUBLIC_STORAGE_URL || "https://reservasi.labsipilunsoed.com/"}/storage/${imagePath}`;
   };
 
   return (

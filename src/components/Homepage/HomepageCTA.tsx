@@ -15,7 +15,7 @@ export default function HomepageCTA() {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="http://localhost:8000"
+              href="https://reservasi.labsipilunsoed.com/"
               className="text-light-base bg-gradient-to-br from-sipil-base to-sipil-secondary px-4 py-2 md:px-6 md:py-3 rounded-xl font-semibold transition-all duration-300 shadow hover:shadow-lg"
             >
               Reservasi Pengujian

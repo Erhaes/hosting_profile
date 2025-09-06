@@ -165,7 +165,7 @@ export default function DownloadMain() {
   // Helper function to format download URL
   const getDownloadUrl = (filePath: string) => {
     return `${
-      process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"
+      process.env.NEXT_PUBLIC_STORAGE_URL || "https://reservasi.labsipilunsoed.com/"
     }/storage/${filePath}`;
   };
 

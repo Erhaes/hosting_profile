@@ -91,7 +91,7 @@ export default function FacilityDetail({ slug }: FacilityDetailProps) {
       <div className="md:w-1/2">
         <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-lg">
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000'}/storage/${facility.image}`}
+            src={`${process.env.NEXT_PUBLIC_STORAGE_URL || 'https://reservasi.labsipilunsoed.com/'}/storage/${facility.image}`}
             alt={facility.name}
             fill
             className="object-cover"
