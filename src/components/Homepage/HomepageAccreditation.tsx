@@ -129,10 +129,14 @@ const HomepageAccreditation = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-1">
+                  <h3
+                    // className="text-lg font-bold text-gray-800 mb-1 line-clamp-1"
+                    className="text-lg font-bold text-gray-800 mb-1">
                     {item.nama}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+                  <p 
+                    // className="text-sm text-gray-600 mb-2 line-clamp-2"
+                    className="text-sm text-gray-600 mb-2">
                     {item.deskripsi}
                   </p>
                   {item.file && (

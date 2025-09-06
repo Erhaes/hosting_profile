@@ -138,11 +138,15 @@ export default function TestDetail() {
           <div className="flex flex-col md:flex-row gap-8">
             {/* Test Image Gallery */}
             <div className="md:w-1/2">
-              <div className="relative w-full h-72 overflow-hidden rounded-lg">
+              <div 
+                className="relative w-full h-72 md:h-96 lg:h-[480px] overflow-hidden rounded-lg"
+                // className="relative w-full h-72 overflow-hidden rounded-lg"
+                >
                 <img
                   src={getImageUrl(test.images[imageIndex])}
                   alt={test.name}
-                  className="object-cover"
+                  className="w-full h-full object-cover"
+                  // className="object-cover"
                 />
 
                 {/* Status Badge */}

@@ -344,7 +344,8 @@ export default function ProfileMain() {
                         <img 
                           src={getImageUrl(pejabat.photo)} 
                           alt={`Foto ${pejabat.name}`} 
-                          className="w-full h-48 object-cover" 
+                          // className="w-full h-48 object-cover"
+                          className="w-full h-full aspect-square" 
                         />
                       </div>
                       <div className="p-4">
