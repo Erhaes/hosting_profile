@@ -1,7 +1,7 @@
 import {
   Dosen,
   Laboratorium,
-  StrukturJabatan,
+  // StrukturJabatan,
   Prestasi,
   Sertifikasi,
   KerjasamaIndustri,
@@ -116,33 +116,33 @@ const labList: Laboratorium[] = [
   },
 ];
 
-const strukturOrganisasi: StrukturJabatan[] = [
-  {
-    jabatan: "Ketua Program Studi",
-    nama: "Dr. Ir. Nama Kaprodi, M.T.",
-    foto: "/images/struktur/kaprodi.jpg",
-  },
-  {
-    jabatan: "Sekretaris Program Studi",
-    nama: "Dr. Nama Sekprodi, S.T., M.Eng.",
-    foto: "/images/struktur/sekprodi.jpg",
-  },
-  {
-    jabatan: "Koordinator Bidang Akademik",
-    nama: "Dr. Nama Koordinator Akademik, M.T.",
-    foto: "/images/struktur/koor-akademik.jpg",
-  },
-  {
-    jabatan: "Koordinator Bidang Kemahasiswaan",
-    nama: "Ir. Nama Koor Kemahasiswaan, M.Sc.",
-    foto: "/images/struktur/koor-kemahasiswaan.jpg",
-  },
-  {
-    jabatan: "Koordinator Bidang Kerjasama dan Alumni",
-    nama: "Dr. Nama Koor Kerjasama, S.T., M.T.",
-    foto: "/images/struktur/koor-kerjasama.jpg",
-  },
-];
+// const strukturOrganisasi: StrukturJabatan[] = [
+//   {
+//     jabatan: "Ketua Program Studi",
+//     nama: "Dr. Ir. Nama Kaprodi, M.T.",
+//     foto: "/images/struktur/kaprodi.jpg",
+//   },
+//   {
+//     jabatan: "Sekretaris Program Studi",
+//     nama: "Dr. Nama Sekprodi, S.T., M.Eng.",
+//     foto: "/images/struktur/sekprodi.jpg",
+//   },
+//   {
+//     jabatan: "Koordinator Bidang Akademik",
+//     nama: "Dr. Nama Koordinator Akademik, M.T.",
+//     foto: "/images/struktur/koor-akademik.jpg",
+//   },
+//   {
+//     jabatan: "Koordinator Bidang Kemahasiswaan",
+//     nama: "Ir. Nama Koor Kemahasiswaan, M.Sc.",
+//     foto: "/images/struktur/koor-kemahasiswaan.jpg",
+//   },
+//   {
+//     jabatan: "Koordinator Bidang Kerjasama dan Alumni",
+//     nama: "Dr. Nama Koor Kerjasama, S.T., M.T.",
+//     foto: "/images/struktur/koor-kerjasama.jpg",
+//   },
+// ];
 
 const prestasiList: Prestasi[] = [
   {
@@ -233,7 +233,7 @@ const kerjasamaList: KerjasamaIndustri[] = [
 export {
   dosenList,
   labList,
-  strukturOrganisasi,
+  // strukturOrganisasi,
   prestasiList,
   sertifikasiList,
   kerjasamaList,
