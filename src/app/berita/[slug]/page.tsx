@@ -37,6 +37,31 @@ interface NewsDetail {
   };
 }
 
+// Fungsi untuk mengambil semua slug berita dari API
+async function getAllNewsSlugs() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/api/news`);
+    const data = await response.json();
+    
+    // Asumsikan API mengembalikan array berita dengan property slug
+    return data.data.map((news: any) => ({
+      slug: news.slug,
+    }));
+  } catch (error) {
+    console.error('Failed to fetch news slugs:', error);
+    return [];
+  }
+}
+
+// Fungsi generateStaticParams untuk static export
+export async function generateStaticParams() {
+  const newsSlugs = await getAllNewsSlugs();
+  
+  return newsSlugs.map((news: { slug: string }) => ({
+    slug: news.slug,
+  }));
+}
+
 export default function NewsDetail() {
   const params = useParams();
   const slug = params?.slug as string;
