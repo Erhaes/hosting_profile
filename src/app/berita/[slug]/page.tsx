@@ -88,13 +88,13 @@ export default function NewsDetail() {
   };
 
   // Helper function to format content with paragraphs
-  const formatContent = (content: string) => {
-    return content.split("\n").map((paragraph, index) => (
-      <p key={index} className="mb-4 text-gray-700 leading-relaxed">
-        {paragraph}
-      </p>
-    ));
-  };
+  // const formatContent = (content: string) => {
+  //   return content.split("\n").map((paragraph, index) => (
+  //     <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+  //       {paragraph}
+  //     </p>
+  //   ));
+  // };
 
   useEffect(() => {
     const loadNews = async () => {

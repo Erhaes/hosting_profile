@@ -198,7 +198,7 @@ export default function TestDetail() {
             {/* Test Information */}
             <div className="md:w-1/2">
               <div className="flex items-center gap-4 mb-4">
-                <a
+                <Link
                   href="/pengujian"
                   className="text-blue-300 hover:text-white flex items-center text-sm"
                 >
@@ -217,7 +217,7 @@ export default function TestDetail() {
                     />
                   </svg>
                   Kembali ke Daftar Pengujian
-                </a>
+                </Link>
               </div>
 
               <h1 className="text-3xl font-bold mb-2">{test.name}</h1>

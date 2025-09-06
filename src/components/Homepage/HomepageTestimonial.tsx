@@ -273,7 +273,7 @@ export default function HomepageTestimonial() {
                             ref={container1Ref}
                             style={{ whiteSpace: isLargeScreen ? "normal" : "nowrap" }}
                         >
-                            {reviews1.map((review, index) => (
+                            {reviews1.map((review) => (
                                 <ReviewCard
                                     key={review.id}
                                     review={review}
@@ -286,7 +286,7 @@ export default function HomepageTestimonial() {
                             ref={container2Ref}
                             style={{ whiteSpace: isLargeScreen ? "normal" : "nowrap" }}
                         >
-                            {reviews2.map((review, index) => (
+                            {reviews2.map((review) => (
                                 <ReviewCard
                                     key={review.id}
                                     review={review}
