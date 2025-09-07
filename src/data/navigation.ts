@@ -31,7 +31,7 @@
       },
       {
           title: "Reservasi",
-          path: "/",
+          path: "https://reservasi.labsipilunsoed.com/",
       }
     ];
     

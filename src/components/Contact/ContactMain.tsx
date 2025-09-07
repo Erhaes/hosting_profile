@@ -41,7 +41,7 @@ export default function Header() {
         name: "Muhammad Zaki Dzulfikar",
         email: "zaki@gmail.com",
         subject: "Testing Saja",
-        content: "http://127.0.0.1:8000/api/contact",
+        content: "https://reservasi.labsipilunsoed.com/api/contact",
       });
       setSubmitMessage("Pesan berhasil dikirim!");
       

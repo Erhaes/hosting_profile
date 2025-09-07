@@ -407,7 +407,7 @@ export default function TestsMain() {
                   <img
                     src={`${
                       process.env.NEXT_PUBLIC_API_BASE_URL ||
-                      "http://127.0.0.1:8000"
+                      "https://reservasi.labsipilunsoed.com"
                     }/storage/${test.images[0]}`}
                     alt={test.name}
                     className="object-cover w-full h-full"

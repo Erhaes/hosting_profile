@@ -60,7 +60,7 @@ export default function TestDetail() {
   // Helper function to get image URL
   const getImageUrl = (imagePath: string) => {
     return `${
-      process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"
+      process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"
     }/storage/${imagePath}`;
   };
 
