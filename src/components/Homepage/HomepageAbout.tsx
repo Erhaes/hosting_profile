@@ -19,7 +19,7 @@ export default function HomepageAbout() {
     if (!imagePath) {
       return "/images/backgrounds/lobby.jpeg"; // Default fallback image
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"}/storage/${imagePath}`;
   };
 
   // Parse images string to array
@@ -173,13 +173,13 @@ export default function HomepageAbout() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href="#"
+                href="/fasilitas"
                 className="rounded-md bg-blue-base text-light-base py-2 px-4 font-semibold text-center hover:bg-blue-quaternary hover:text-blue-base transition duration-300 small-font-size"
               >
                 Lihat Fasilitas
               </a>
               <a
-                href="#"
+                href="/pengujian"
                 className="rounded-md border border-blue-base text-blue-base py-2 px-4 font-semibold text-center hover:bg-blue-quaternary transition duration-300 small-font-size"
               >
                 Lihat Pengujian

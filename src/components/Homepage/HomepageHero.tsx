@@ -37,13 +37,13 @@ export default function HomepageHero() {
             </p>
             <div className="flex flex-wrap gap-2">
               <a
-                href="http://localhost:8000"
+                href="https://reservasi.labsipilunsoed.com/"
                 className="rounded-md bg-blue-base text-light-base py-2 px-4 font-semibold hover:bg-blue-quaternary hover:text-blue-base transition duration-300 small-font-size"
               >
                 Reservasi Laboratorium
               </a>
               <a
-                href="https://www.youtube.com/watch?v=6rR5R_Tc_zE&t=14s&pp=0gcJCY0JAYcqIYzv"
+                href="https://www.youtube.com/watch?v=QMn3g51K_S0&t=103s"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-md border border-blue-base text-blue-base py-2 px-4 font-semibold hover:bg-blue-quaternary transition duration-300 small-font-size"

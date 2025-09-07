@@ -13,14 +13,14 @@ const HomepageAccreditation = () => {
     if (!imagePath) {
       return "/images/accreditations/iso-certification.jpg"; // Default fallback image
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${imagePath}`;
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"}/storage/${imagePath}`;
   };
 
   const getFileUrl = (filePath: string | null) => {
     if (!filePath) {
       return "#"; // Return # if no file available
     }
-    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"}/storage/${filePath}`;
+    return `${process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"}/storage/${filePath}`;
   };
 
   // Fetch data standar laboratorium

@@ -36,11 +36,11 @@ export interface Laboratorium {
   foto: string;
 }
 
-// export interface StrukturJabatan {
-//   jabatan: string;
-//   nama: string;
-//   foto: string;
-// }
+export interface StrukturJabatan {
+  jabatan: string;
+  nama: string;
+  foto: string;
+}
 export interface Position {
   id: number;
   name: string;

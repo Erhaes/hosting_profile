@@ -57,7 +57,7 @@ export default function NewsDetail() {
   const getImageUrl = (imagePath: string) => {
     if (!imagePath) return "/images/default-news.jpg";
     return `${
-      process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"
+      process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"
     }/storage/${imagePath}`;
   };
 
@@ -65,7 +65,7 @@ export default function NewsDetail() {
   const getAvatarUrl = (avatarPath: string) => {
     if (!avatarPath) return "/images/default-avatar.jpg";
     return `${
-      process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"
+      process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"
     }/storage/${avatarPath}`;
   };
 
