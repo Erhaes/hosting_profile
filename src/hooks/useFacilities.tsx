@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import facilitiesData from '@/data/facilities';
 import apiClient from '@/services/apiClient';
+import { Facility } from "@/types";
 
 export function useFacilities() {
-  const [facilities, setFacilities] = useState(facilitiesData);
+  const [facilities, setFacilities] = useState<Facility[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -12,7 +12,7 @@ export function useFacilities() {
       try {
         setLoading(true);
         const response = await apiClient.get('/labs');
-        setFacilities(response.data);
+        setFacilities(response.data.data);
         setError(null);
       } catch (err) {
         console.error('Failed to fetch facilities:', err);

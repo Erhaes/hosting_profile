@@ -122,15 +122,22 @@ export interface Facility {
   id: number;
   name: string;
   description: string;
-  image: string;
-  type: FacilityType;
-  room: string;
-  gears: Gear[];
+  imageUrl: string;
 }
 
-export interface TestImage {
+export interface News {
   id: number;
-  image: string;
+  title: string;
+  content: string;
+  date: string;
+  imageUrl: string;
+}
+
+export interface Laboratory {
+  id: number;
+  nama: string;
+  deskripsi: string;
+  foto: string;
 }
 
 export interface TestUnit {
