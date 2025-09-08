@@ -3,6 +3,7 @@ import { News } from "@/types";
 const news: News[] = [
     {
         id: 1,
+        slug: "pembangunan-jembatan-suramadu-fase-2-dimulai",
         title: "Pembangunan Jembatan Suramadu Fase 2 Dimulai",
         content: "Pembangunan fase kedua dari Jembatan Suramadu telah dimulai. Proyek ini diperkirakan akan selesai dalam waktu 3 tahun dan akan meningkatkan konektivitas antara Surabaya dan Madura.",
         thumbnail: "/images/news/suramadu-bridge.jpg",
@@ -20,6 +21,7 @@ const news: News[] = [
     },
     {
         id: 2,
+        slug: "perusahaan-memenangkan-tender-proyek-bendungan",
         title: "Perusahaan Memenangkan Tender Proyek Bendungan",
         content: "PT Sipil Jaya berhasil memenangkan tender untuk proyek pembangunan bendungan di Jawa Barat. Proyek senilai 2 triliun rupiah ini akan menjadi salah satu bendungan terbesar di Indonesia.",
         thumbnail: "/images/news/dam-project.jpg",
@@ -37,6 +39,7 @@ const news: News[] = [
     },
     {
         id: 3,
+        slug: "teknologi-baru-dalam-konstruksi-ramah-lingkungan",
         title: "Teknologi Baru dalam Konstruksi Ramah Lingkungan",
         content: "Inovasi terbaru dalam teknologi konstruksi ramah lingkungan telah diperkenalkan dalam pameran tahunan. Material bangunan ini dapat mengurangi emisi karbon hingga 40%.",
         thumbnail: "/images/news/eco-construction.jpg",
@@ -54,6 +57,7 @@ const news: News[] = [
     },
     {
         id: 4,
+        slug: "pelatihan-teknik-sipil-untuk-mahasiswa",
         title: "Pelatihan Teknik Sipil untuk Mahasiswa",
         content: "Program pelatihan teknik sipil untuk mahasiswa telah diluncurkan sebagai bagian dari kerjasama antara industri dan perguruan tinggi untuk meningkatkan kualitas lulusan.",
         thumbnail: "/images/news/civil-training.jpg",
@@ -71,6 +75,7 @@ const news: News[] = [
     },
     {
         id: 5,
+        slug: "proyek-renovasi-gedung-bersejarah",
         title: "Proyek Renovasi Gedung Bersejarah",
         content: "Renovasi gedung bersejarah di pusat kota telah dimulai. Proyek ini bertujuan untuk melestarikan nilai sejarah sambil meningkatkan struktur dan keamanan gedung.",
         thumbnail: "/images/news/historical-building.jpg",

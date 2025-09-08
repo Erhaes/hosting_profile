@@ -4,6 +4,7 @@ const facilitiesData: Facility[] = [
     {
         id: 1,
         name: "Laboratorium Geoteknik",
+        slug: "laboratorium-geoteknik",
         description:
             "Laboratorium Geoteknik adalah fasilitas yang digunakan untuk penelitian dan pengujian material tanah, serta analisis stabilitas lereng dan pondasi.",
         image: "/images/facilities/geoteknik.jpg",
@@ -32,6 +33,7 @@ const facilitiesData: Facility[] = [
     {
         id: 2,
         name: "Laboratorium Hidrolika",
+        slug: "laboratorium-hidrolika",
         description:
             "Laboratorium Hidrolika adalah fasilitas yang digunakan untuk penelitian dan pengujian aliran fluida, serta analisis sistem drainase.",
         image: "/images/facilities/hidrolika.jpg",
@@ -58,6 +60,7 @@ const facilitiesData: Facility[] = [
     {
         id: 3,
         name: "Laboratorium Struktur",
+        slug: "laboratorium-struktur",
         description:
             "Laboratorium Struktur adalah fasilitas yang digunakan untuk penelitian dan pengujian struktur bangunan, termasuk analisis kekuatan dan ketahanan struktur.",
         image: "/images/facilities/struktur.jpg",
@@ -84,6 +87,7 @@ const facilitiesData: Facility[] = [
     {
         id: 4,
         name: "Laboratorium Bahan Bangunan",
+        slug: "laboratorium-bahan-bangunan",
         description:
             "Laboratorium Bahan Bangunan digunakan untuk pengujian kualitas dan karakteristik material konstruksi seperti beton, baja, dan aspal.",
         image: "/images/facilities/bahan-bangunan.jpg",
@@ -110,6 +114,7 @@ const facilitiesData: Facility[] = [
     {
         id: 5,
         name: "Laboratorium Transportasi",
+        slug: "laboratorium-transportasi",
         description:
             "Laboratorium Transportasi digunakan untuk penelitian dan pengujian terkait sistem transportasi, lalu lintas, dan perkerasan jalan.",
         image: "/images/facilities/transportasi.jpg",
@@ -136,6 +141,7 @@ const facilitiesData: Facility[] = [
     {
         id: 6,
         name: "Laboratorium Lingkungan",
+        slug: "laboratorium-lingkungan",
         description:
             "Laboratorium Lingkungan digunakan untuk pengujian kualitas air, udara, dan tanah serta analisis dampak lingkungan.",
         image: "/images/facilities/lingkungan.jpg",
@@ -162,6 +168,7 @@ const facilitiesData: Facility[] = [
     {
         id: 7,
         name: "Laboratorium Survey dan Pemetaan",
+        slug: "laboratorium-survey-dan-pemetaan",
         description:
             "Laboratorium Survey dan Pemetaan digunakan untuk pelatihan dan pengujian alat ukur tanah serta pemetaan topografi.",
         image: "/images/facilities/survey.jpg",
@@ -188,6 +195,7 @@ const facilitiesData: Facility[] = [
     {
         id: 8,
         name: "Laboratorium Mekanika Fluida",
+        slug: "laboratorium-mekanika-fluida",
         description:
             "Laboratorium Mekanika Fluida digunakan untuk mempelajari perilaku fluida dan aplikasinya dalam teknik sipil.",
         image: "/images/facilities/mekanika-fluida.jpg",
@@ -214,6 +222,7 @@ const facilitiesData: Facility[] = [
     {
         id: 9,
         name: "Laboratorium Komputasi Teknik Sipil",
+        slug: "laboratorium-komputasi-teknik-sipil",
         description:
             "Laboratorium Komputasi menyediakan fasilitas perangkat lunak dan perangkat keras untuk simulasi dan analisis struktur serta transportasi.",
         image: "/images/facilities/komputasi.jpg",
@@ -240,6 +249,7 @@ const facilitiesData: Facility[] = [
     {
         id: 10,
         name: "Laboratorium Manajemen Konstruksi",
+        slug: "laboratorium-manajemen-konstruksi",
         description:
             "Laboratorium ini digunakan untuk simulasi manajemen proyek konstruksi, termasuk penjadwalan dan estimasi biaya.",
         image: "/images/facilities/manajemen-konstruksi.jpg",
@@ -266,6 +276,7 @@ const facilitiesData: Facility[] = [
     {
         id: 11,
         name: "Laboratorium Jalan Raya",
+        slug: "laboratorium-jalan-raya",
         description:
             "Laboratorium Jalan Raya digunakan untuk pengujian material perkerasan dan analisis struktur jalan.",
         image: "/images/facilities/jalan-raya.jpg",
@@ -292,6 +303,7 @@ const facilitiesData: Facility[] = [
     {
         id: 12,
         name: "Laboratorium Beton",
+        slug: "laboratorium-beton",
         description:
             "Laboratorium Beton digunakan untuk pengujian mutu beton, mulai dari bahan baku hingga produk akhir.",
         image: "/images/facilities/beton.jpg",

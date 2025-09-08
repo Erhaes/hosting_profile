@@ -2,61 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import apiClient from "@/services/apiClient";
+import { News } from "@/types";
 
-interface NewsDetail {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  thumbnail: string;
-  author_id: number;
-  news_category_id: number;
-  deleted_at: string | null;
-  created_at: string;
-  updated_at: string;
-  author: {
-    id: number;
-    name: string;
-    email: string;
-    bio: string;
-    avatar: string;
-    deleted_at: string | null;
-    created_at: string;
-    updated_at: string;
-  };
-  news_category: {
-    id: number;
-    name: string;
-    slug: string;
-    deleted_at: string | null;
-    created_at: string;
-    updated_at: string;
-  };
+interface NewsDetailProps {
+  news: News;
 }
 
-export default function NewsDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
-  const [news, setNews] = useState<NewsDetail | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const fetchNews = async (slug: string) => {
-    try {
-      const response = await apiClient.get(`/news/${slug}`);
-      return response.data.data;
-    } catch (error) {
-      throw new Error(`Failed to fetch news data: ${error}`);
-    }
-  };
-
+export default function NewsDetail({ news }: NewsDetailProps) {
   // Helper function to get image URL
   const getImageUrl = (imagePath: string) => {
     if (!imagePath) return "/images/default-news.jpg";
-    return `${ 
+    return `${
       process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"
     }/storage/${imagePath}`;
   };
@@ -64,7 +20,7 @@ export default function NewsDetail() {
   // Helper function to get avatar URL
   const getAvatarUrl = (avatarPath: string) => {
     if (!avatarPath) return "/images/default-avatar.jpg";
-    return `${ 
+    return `${
       process.env.NEXT_PUBLIC_API_BASE_URL || "https://reservasi.labsipilunsoed.com"
     }/storage/${avatarPath}`;
   };
@@ -87,59 +43,13 @@ export default function NewsDetail() {
     });
   };
 
-  // Helper function to format content with paragraphs
-  // const formatContent = (content: string) => {
-  //   return content.split("\n").map((paragraph, index) => (
-  //     <p key={index} className="mb-4 text-gray-700 leading-relaxed">
-  //       {paragraph}
-  //     </p>
-  //   ));
-  // };
-
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await fetchNews(slug);
-        setNews(data);
-      } catch (err) {
-        console.error("Failed to fetch news:", err);
-        setError("Gagal memuat data berita. Silakan coba lagi.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (slug) {
-      loadNews();
-    }
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <main className="min-h-screen bg-light-base">
-        <section className="py-28 section-padding-x">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex justify-center items-center h-64">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sipil-base mx-auto mb-4"></div>
-                <p>Memuat berita...</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    );
-  }
-
-  if (error || !news) {
+  if (!news) {
     return (
       <main className="min-h-screen bg-light-base">
         <section className="py-28 section-padding-x">
           <div className="max-w-4xl mx-auto">
             <div className="text-center text-red-600">
-              <p>{error || "Berita tidak ditemukan"}</p>
+              <p>Berita tidak ditemukan</p>
               <Link
                 href="/berita"
                 className="mt-4 inline-block px-4 py-2 bg-sipil-base text-white rounded-md hover:bg-sipil-secondary"
@@ -162,11 +72,13 @@ export default function NewsDetail() {
             <Link href="/" className="hover:text-sipil-base">
               Beranda
             </Link>
-            <span>/</span>
+            <span>/
+            </span>
             <Link href="/berita" className="hover:text-sipil-base">
               Berita
             </Link>
-            <span>/</span>
+            <span>/
+            </span>
             <span className="text-gray-900">{news.title}</span>
           </nav>
         </div>
@@ -181,10 +93,10 @@ export default function NewsDetail() {
               {/* Category Badge */}
               <div className="mb-4">
                 <Link
-                  href={`/berita/kategori/${news.news_category.slug}`}
+                  href={`/berita/kategori/${news.category.name.toLowerCase()}`}
                   className="inline-block bg-sipil-base text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-sipil-secondary transition-colors"
                 >
-                  {news.news_category.name}
+                  {news.category.name}
                 </Link>
               </div>
 
@@ -199,15 +111,15 @@ export default function NewsDetail() {
                 <div className="flex items-center">
                   <div className="relative w-10 h-10 mr-3">
                     <Image
-                      src={getAvatarUrl(news.author.avatar)}
-                      alt={news.author.name}
+                      src={getAvatarUrl(news.user.photo)}
+                      alt={news.user.name}
                       fill
                       className="object-cover rounded-full"
                     />
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">
-                      {news.author.name}
+                      {news.user.name}
                     </p>
                     <p className="text-sm text-gray-500">Penulis</p>
                   </div>
@@ -229,8 +141,8 @@ export default function NewsDetail() {
                     />
                   </svg>
                   <span>
-                    {formatDate(news.created_at)} •{" "}
-                    {formatTime(news.created_at)}
+                    {formatDate(news.date)} •{" "}
+                    {formatTime(news.date)}
                   </span>
                 </div>
               </div>
@@ -239,7 +151,7 @@ export default function NewsDetail() {
             {/* Featured Image */}
             <div className="relative h-64 md:h-96">
               <Image
-                src={getImageUrl(news.thumbnail)}
+                src={news.thumbnail}
                 alt={news.title}
                 fill
                 className="object-cover"
@@ -252,7 +164,6 @@ export default function NewsDetail() {
               <div className="prose prose-lg max-w-none mb-4 text-gray-700 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: news.content }}
               >
-                {/* {formatContent(news.content)} */}
               </div>
 
               {/* Tags/Actions */}
@@ -330,29 +241,6 @@ export default function NewsDetail() {
               </div>
             </div>
           </article>
-
-          {/* Author Bio */}
-          {/* <div className="mt-8 bg-white rounded-lg shadow-lg p-6 md:p-8">
-            <h3 className="text-xl font-bold mb-4">Tentang Penulis</h3>
-            <div className="flex items-start gap-4">
-              <div className="relative w-16 h-16 flex-shrink-0">
-                <Image
-                  src={getAvatarUrl(news.author.avatar)}
-                  alt={news.author.name}
-                  fill
-                  className="object-cover rounded-full"
-                />
-              </div>
-              <div>
-                <h4 className="font-bold text-lg text-gray-900 mb-2">
-                  {news.author.name}
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {news.author.bio}
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </main>

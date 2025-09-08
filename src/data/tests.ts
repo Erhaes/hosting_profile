@@ -16,6 +16,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 2,
       name: "Laboratorium Bahan Bangunan",
+      slug: "laboratorium-bahan-bangunan",
       description: "Laboratorium untuk pengujian berbagai material bangunan termasuk beton, baja, kayu, dan agregat.",
       image: "/images/facilities/lab-bahan.jpg",
       type: {
@@ -52,6 +53,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 1,
       name: "Laboratorium Geoteknik",
+      slug: "laboratorium-geoteknik",
       description: "Laboratorium untuk pengujian tanah dan analisis pondasi.",
       image: "/images/facilities/geoteknik.jpg",
       type: {
@@ -88,6 +90,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 2,
       name: "Laboratorium Bahan Bangunan",
+      slug: "laboratorium-bahan-bangunan",
       description: "Laboratorium untuk pengujian berbagai material bangunan termasuk beton, baja, kayu, dan agregat.",
       image: "/images/facilities/lab-bahan.jpg",
       type: {
@@ -124,6 +127,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 3,
       name: "Laboratorium Struktur",
+      slug: "laboratorium-struktur",
       description: "Laboratorium untuk menguji dan menganalisis perilaku struktur dan komponen struktural.",
       image: "/images/facilities/lab-struktur.jpg",
       type: {
@@ -160,6 +164,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 1,
       name: "Laboratorium Geoteknik",
+      slug: "laboratorium-geoteknik",
       description: "Laboratorium untuk pengujian tanah dan analisis pondasi.",
       image: "/images/facilities/geoteknik.jpg",
       type: {
@@ -196,6 +201,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 4,
       name: "Laboratorium Lingkungan",
+      slug: "laboratorium-lingkungan",
       description: "Laboratorium untuk pengujian kualitas air, udara, dan dampak lingkungan dari proyek infrastruktur.",
       image: "/images/facilities/lab-lingkungan.jpg",
       type: {
@@ -232,6 +238,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 5,
       name: "Laboratorium Transportasi",
+      slug: "laboratorium-transportasi",
       description: "Laboratorium untuk pengujian material perkerasan jalan, aspal, dan analisis transportasi.",
       image: "/images/facilities/lab-transportasi.jpg",
       type: {
@@ -268,6 +275,7 @@ const testsData: Test[] = [
     laboratory: {
       id: 1,
       name: "Laboratorium Geoteknik",
+      slug: "laboratorium-geoteknik",
       description: "Laboratorium untuk pengujian tanah dan analisis pondasi.",
       image: "/images/facilities/geoteknik.jpg",
       type: {

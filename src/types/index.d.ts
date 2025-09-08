@@ -121,6 +121,7 @@ export interface Gear {
 export interface Facility {
   id: number;
   name: string;
+  slug: string;
   description: string;
   image: string;
   type: FacilityType;
@@ -167,6 +168,7 @@ export interface UserNews {
 export interface News {
   id: number;
   title: string;
+  slug: string;
   content: string;
   thumbnail: string;
   date: string;
